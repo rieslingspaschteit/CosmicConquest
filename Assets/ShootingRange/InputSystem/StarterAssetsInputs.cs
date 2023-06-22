@@ -13,6 +13,7 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
 		public bool shoot;
+		public bool pickUp;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -80,6 +81,15 @@ namespace StarterAssets
 		{
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}
+
+		private void OnTriggerEnter(Collider other)
+    	{
+        	if (other.gameObject.CompareTag("Munition")) 
+        	{
+            	other.gameObject.SetActive(false);
+				pickUp = true;
+        	}
+    }
 	}
 	
 }
