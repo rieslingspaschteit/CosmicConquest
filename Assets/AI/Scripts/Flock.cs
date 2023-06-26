@@ -35,10 +35,10 @@ public class Flock : MonoBehaviour
                 speed = Random.Range(FlockManager.FM.minSpeed, FlockManager.FM.maxSpeed);
             }
 
-            if (Random.Range(0, 100) < 10) { 
+            if (Random.Range(0, 100) < 50) { 
                 ApplyRules();
             }
-
+            
         }
 
         this.transform.Translate(0,0, speed * Time.deltaTime);
